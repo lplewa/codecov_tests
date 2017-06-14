@@ -9,11 +9,11 @@ program: main.o foo.o
 	gcc -o $@ $^ $(LIBS)
 
 %.o: %.c
-	gcc -c $^ $(CFLAGS)
+	gcc -c `readlink -f $^` $(CFLAGS)
 
 
 clean:
-	rm -f *.o program
+	rm -f *.o program *.gcda *.gcno *.gcov
 
 test: program
 	@./program
