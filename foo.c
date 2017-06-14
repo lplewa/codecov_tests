@@ -6,7 +6,7 @@ int bar(int b)
 int foo(int a, int b, int c)
 {
 	int ret = 0;
-	if ((a==0 && bar(b)) || c) {
+	if ((a==1 && bar(b)) == 2 || c) {
 		ret += 1;
 	} else {
 		ret += 2;
